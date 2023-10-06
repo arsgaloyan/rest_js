@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Document</title>
+</head>
+<body>
+<header class="header">
+    <div class="header-left">
+        <h3>Email: <span sec:authentication="name"></span>,&nbsp;</h3>
+        <h3> with roles: <span sec:authentication="principal.authorities"></span></h3>
+    </div>
+    <div class="header-right">
+        <form th:action="@{/logout}" method="post">
+            <button class="button-logout" type="submit">Logout</button>
+        </form>
+    </div>
+</header>
+<div class="main">
+    <div class="sidebar">
+        <a class="sidebar-link-check" href="/admin">Admin</a>
+        <a href="/user">User</a>
+    </div>
+    <div class="main-content">
+        <div class="content">
+            <h1>Admin panel</h1>
+            <div class="tabs">
+                <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+                <label for="tab-btn-1">User table</label>
+                <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+                <label for="tab-btn-2">New User</label>
+
+                <div id="content-1">
+                    <div class="content-header">
+                        <h4>All Users</h4>
+                    </div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Age</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody id="user-table-body">
+
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="content-2">
+                    <form class="new-user-form">
+                        <label class="new-user-label" for="firstName">First name</label>
+                        <input type="text" id="firstName" name="firstName" required><br>
+
+                        <label for="lastName">Last name</label>
+                        <input type="text" id="lastName" name="lastName" required><br>
+
+                        <label for="age">Age</label>
+                        <input type="number" pattern="\d*" id="age" name="age" required><br>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required><br>
+
+                        <label for="password">Password</label>
+                        <input type="text" id="password" name="password" required><br>
+
+                        <label for="role">Role</label>
+                        <select id="role" name="role">
+                            <option value="ROLE_ADMIN">ADMIN</option>
+                            <option value="ROLE_USER">USER</option>
+                        </select><br>
+
+                        <button class="button-submit" type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/admin.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

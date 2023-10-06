@@ -1,0 +1,212 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    height: 55px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    padding-left: 30px;
+    display: flex;
+}
+
+.header-right {
+    padding-right: 30px;
+    display: flex;
+}
+
+.main {
+    display: flex;
+}
+
+.sidebar {
+    width: 15%;
+    min-width: 200px;
+    height: auto;
+    min-height: 100vh;
+    background-color: #bdbdbdd2;
+    float: left;
+}
+
+.sidebar a {
+    display: inline-block; /* Превращает ссылку в блочно-строчный элемент */
+    text-align: start; /* Выравнивает текст по центру внутри блока */
+    width: 100%; /* Может быть необходимо задать ширину для полного центрирования */
+    padding: 12px;
+    padding-left: 25px;
+    text-decoration: none;
+    color: #505050;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    color: #000000;
+}
+
+.sidebar-link-check {
+    background-color: #147fd6;
+}
+
+.main-content {
+    width: 100%;
+    height: auto;
+    padding: 45px;
+    box-sizing: border-box;
+
+}
+
+.content {
+    display: grid;
+    /* background-color: #858080; */
+}
+
+
+/* border: 1px solid black; Для демонстрации границы блока */
+
+
+.tabs {
+    font-size: 0;
+    width: 100%;
+    /* max-width: 350px; */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
+.tabs > input[type="radio"] {
+    display: none;
+}
+
+.tabs > div {
+    /* скрыть контент по умолчанию */
+    display: none;
+    border: 1px solid #181616;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+/* отобразить контент, связанный с вабранной радиокнопкой (input type="radio") */
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2 {
+    display: block;
+}
+
+.tabs > label {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    padding: 6px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    transition: color 0.15s ease-in-out, background-color 0.55s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    border-radius: 4px;
+}
+
+.tabs > label:not(:first-of-type) {
+    border-left: none;
+
+}
+
+.tabs > input[type="radio"]:checked + label {
+    background-color: #1f1919b9;
+    color: rgb(247, 247, 247);
+}
+
+.new-user-form {
+    width: 350px; /* Ширина формы (замените на нужное значение) */
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.new-user-form input {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.new-user-form select {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 30px;
+
+}
+
+.button-submit {
+    width: 310px;
+    height: 38px;
+    background-color: #21a80f;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: rgb(243, 243, 243);
+}
+
+.button-edit {
+    width: 54px;
+    height: 38px;
+    background-color: #008cff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: rgb(243, 243, 243);
+}
+
+.button-delete {
+    width: 58px;
+    height: 38px;
+    background-color: #ff1100;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: rgb(243, 243, 243);
+}
+
+.button-logout {
+    width: 58px;
+    height: 38px;
+    background-color: #ff110000;
+    border: 1px solid transparent;
+    color: rgb(243, 243, 243);
+}
+
+
+.button-logout:hover {
+    color: rgb(91, 99, 212);
+}
+
+
+.button-logout:active {
+    background-color: #ff110000;
+    border: none;
+}
+
+/* Модальное окно 1 */
+.modal-body {
+    display: block;
+    text-align: center;
+    justify-self: center;
+}
+
+.form-edit label {
+    width: 300px;
+    height: 15px;
+    margin-top: 10px;
+}
+
+.form-edit select {
+    width: 200px;
+    height: 30px;
+}
