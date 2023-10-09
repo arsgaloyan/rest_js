@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+
     private final UserDao userDao;
     private final RoleService roleService;
     private final WebSecurityConfig webSecurityConfig;

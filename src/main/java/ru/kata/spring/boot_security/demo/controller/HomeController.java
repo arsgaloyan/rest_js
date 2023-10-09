@@ -17,6 +17,7 @@ import java.util.Optional;
 
 @Controller
 public class HomeController {
+
     private final UserService userService;
 
     @Autowired
@@ -43,7 +44,8 @@ public class HomeController {
 
 
     @PostMapping("/logout")
-    public String customLogout(HttpServletRequest request, HttpServletResponse response, Authentication authentication) {
+    public String customLogout(HttpServletRequest request, HttpServletResponse response
+            , Authentication authentication) {
         if (authentication != null) {
             new SecurityContextLogoutHandler().logout(request, response, authentication);
         }

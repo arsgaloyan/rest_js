@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ApplicationStartService {
+
     private final EntityManager entityManager;
 
     @Autowired
